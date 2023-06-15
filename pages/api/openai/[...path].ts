@@ -46,30 +46,6 @@ async function requestOpenai(req: NextRequest) {
         signal: controller.signal,
     }
 
-    // try to refuse gpt4 request
-    if (req.body) {
-        try {
-            const clonedBody = await req.text()
-            fetchOptions.body = clonedBody
-
-            const jsonBody = JSON.parse(clonedBody)
-
-            if ((jsonBody?.model ?? '').includes('gpt-4')) {
-                return NextResponse.json(
-                    {
-                        error: true,
-                        message: 'you are not allowed to use gpt-4 model',
-                    },
-                    {
-                        status: 403,
-                    },
-                )
-            }
-        } catch (e) {
-            console.error('[OpenAI] gpt4 filter', e)
-        }
-    }
-
     try {
         const res = await fetch(fetchUrl, fetchOptions)
 
