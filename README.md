@@ -1,4 +1,4 @@
-## OpenAI Vercel Proxy 轻松免费部署你的OpenAI代理
+## OpenAI Vercel Proxy 轻松免费部署你的OpenAI和TypeChat代理
 
 ### 快速开始
 
@@ -36,3 +36,7 @@ vercel --prod
 - 例如： OpenAI官方Chat接口为 https://api.openai.com/v1/chat/completions 对应代理接口为 https://openai-vercel-proxy-xxxx.vercel.app/api/openai/v1/chat/completions`
 
 - OpenAI接口文档：https://platform.openai.com/docs/api-reference/chat
+
+#### 5.TypeChat接口
+- 代理地址：https://openai-vercel-proxy-xxxx.vercel.app/api/typechat/translate
+- 参数说明：`apiKey`OpenAi的ApiKey，`model`gpt版本，`schema`schema.ts字符串，`prompt`用户输入

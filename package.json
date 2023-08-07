@@ -17,6 +17,7 @@
     "next": "13.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "typechat": "^0.0.10",
     "typescript": "5.1.3"
   }
 }
