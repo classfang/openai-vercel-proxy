@@ -40,3 +40,30 @@ vercel --prod
 #### 5.TypeChat接口
 - 代理地址：https://openai-vercel-proxy-xxxx.vercel.app/api/typechat/translate
 - 参数说明：`apiKey`OpenAi的ApiKey，`model`gpt版本，`schema`schema.ts字符串，`prompt`用户输入
+
+请求示例：
+```json
+{
+    "apiKey": "xxx",
+    "model": "gpt-3.5-turbo",
+    "schema": "// This is a schema for writing programs that evaluate expressions.\n\nexport type API = {\n    // Add two numbers\n    add(x: number, y: number): number;\n    // Subtract two numbers\n    sub(x: number, y: number): number;\n    // Multiply two numbers\n    mul(x: number, y: number): number;\n    // Divide two numbers\n    div(x: number, y: number): number;\n    // Negate a number\n    neg(x: number): number;\n    // Identity function\n    id(x: number): number;\n    // Unknown request\n    unknown(text: string): number;\n}",
+    "prompt": "1 + 2"
+}
+```
+响应示例：
+```json
+{
+    "code": 200,
+    "msg": {
+        "@steps": [
+            {
+                "@func": "add",
+                "@args": [
+                    1,
+                    2
+                ]
+            }
+        ]
+    }
+}
+```
