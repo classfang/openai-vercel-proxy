@@ -3,7 +3,7 @@ import {
     createOpenAILanguageModel,
     createProgramTranslator
 } from 'typechat'
-import {isNotNull} from '@/utils/validator' 
+import {isNotNull} from '@/utils/validator'
 
 export default async function handler(
     request: NextApiRequest,
